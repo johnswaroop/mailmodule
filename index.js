@@ -9,9 +9,6 @@ app.get('/',(req, res)=>{
     console.log('get request');
 });
 
-app.listen(3000,()=>{
-    console.log('server running');
-});
 
 
 app.post('/',(req,res)=>{
@@ -21,3 +18,7 @@ app.post('/',(req,res)=>{
 
 
 })
+
+app.listen(8080,()=>{
+    console.log('server running');
+});
