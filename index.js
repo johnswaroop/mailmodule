@@ -41,13 +41,13 @@ app.post('/', (req, res) => {
     console.log('post request');
 
     console.log(req.body.data);
-    
+
 
     
 
     
 
-    console.log(tomail+toname);
+   
   
     // var mailOptions = {
     //     from: '"forge mail" <mailmodule@forge.com>',
