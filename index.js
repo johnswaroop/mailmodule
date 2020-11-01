@@ -41,13 +41,11 @@ app.post('/', (req, res) => {
     console.log('post request');
 
     console.log(req.body.data);
+    
 
-    var arr = req.body.data;
+    
 
-    res.send(arr);
-
-    var tomail=arr[0];
-    var toname=arr[1];
+    
 
     console.log(tomail+toname);
   
