@@ -40,7 +40,7 @@ app.post('/', (req, res) => {
 
     console.log('post request');
 
-    console.log(req.body.data);
+    console.log(req.body);
 
 
     
