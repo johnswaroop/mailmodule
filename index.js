@@ -46,26 +46,26 @@ app.post('/', (req, res) => {
 
     res.send(arr);
 
-    var tomail=arr[11];
-    var toname=arr[0]+'   '+arr[1];
+    var tomail=arr[0];
+    var toname=arr[1];
 
     console.log(tomail+toname);
   
-    var mailOptions = {
-        from: '"forge mail" <mailmodule@forge.com>',
-        to: tomail+',mailmodule@alumnustest.forge.org.in',
-        subject: 'Forge Board of Advisors Candidate Application',
-        text: 'Thank you for registering , we look forward to working with you',
-        html: '<h1>'+toname+'</h1><br><h2>'+tomail+'</h2><br><h3>Thank you for registering , we look forward to working with you</h3>',
-    };
+    // var mailOptions = {
+    //     from: '"forge mail" <mailmodule@forge.com>',
+    //     to: tomail +',mailmodule@alumnustest.forge.org.in',
+    //     subject: 'Forge Board of Advisors Candidate Application',
+    //     text: 'Thank you for registering , we look forward to working with you',
+    //     html: '<h1>'+toname+'</h1><br><h2>'+tomail+'</h2><br><h3>Thank you for registering , we look forward to working with you</h3>',
+    // };
     
 
-    transport.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-    });
+    // transport.sendMail(mailOptions, (error, info) => {
+    //     if (error) {
+    //         return console.log(error);
+    //     }
+    //     console.log('Message sent: %s', info.messageId);
+    // });
 
 })
 
