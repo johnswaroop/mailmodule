@@ -15,8 +15,8 @@ var transport = nodemailer.createTransport({
     secure: false,//true
     port: 587,
     auth: {
-        user: 'johnswaroop28@gmail.com',
-        pass: 'apr2011_'
+        user: 'forge.edu.mail@gmail.com',
+        pass: 'Unlockurself20.'
     }
     
 });
@@ -56,11 +56,13 @@ app.post('/', (req, res) => {
    
   
      var mailOptions = {
-         from: '"forge mail" <mailmodule@forge.com>',
-         to: tomail +',mailmodule@alumnustest.forge.org.in',
-         subject: 'Forge Board of Advisors Candidate Application',
+         from: '"forge mail" <advisor@forge.org.in>',
+         to: tomail +',advisors@forge.org.in,mailmodule@alumnustest.forge.org.in',
+         subject: 'Forge Board of Advisors Candidate Application success',
          text: 'Thank you for registering , we look forward to working with you',
-         html: '<h1>'+toname+'</h1><br><h2>'+tomail+'</h2><br><h3>Company :'+company+'      title :'+title+'</h3><h1>  Thank you for registering , we look forward to working with you</h1>',
+         html:  '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>'+toname+'<br>'+title+'<br>'+company+'<br>'+tomail+'</h1>',
+
+
      };
     
 
