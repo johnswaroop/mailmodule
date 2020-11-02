@@ -44,6 +44,9 @@ app.post('/', (req, res) => {
 
     tomail=req.body.mail;
     toname=req.body.name;
+    company=req.body.company;
+    title=req.body.title;
+    
 
 
     
@@ -57,7 +60,7 @@ app.post('/', (req, res) => {
          to: tomail +',mailmodule@alumnustest.forge.org.in',
          subject: 'Forge Board of Advisors Candidate Application',
          text: 'Thank you for registering , we look forward to working with you',
-         html: '<h1>'+toname+'</h1><br><h2>'+tomail+'</h2><br><h3>Thank you for registering , we look forward to working with you</h3>',
+         html: '<h1>'+toname+'</h1><br><h2>'+tomail+'</h2><br><h3>Company :'+company+'      title :'+title+'</h3><h1>  Thank you for registering , we look forward to working with you</h1>',
      };
     
 
