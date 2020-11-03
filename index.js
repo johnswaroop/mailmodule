@@ -57,7 +57,7 @@ app.post('/', (req, res) => {
   
      var mailOptions = {
          from: '"forge mail" <advisor@forge.org.in>',
-         to: tomail +',advisors@forge.org.in,mailmodule@alumnustest.forge.org.in',
+         to: tomail +',advisors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
          subject: 'Forge Board of Advisors Candidate Application success',
          text: 'Thank you for registering , we look forward to working with you',
          html:  '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>'+toname+'<br>'+title+'<br>'+company+'<br>'+tomail+'</h1>',
@@ -99,10 +99,10 @@ app.post('/amb', (req, res) => {
   
      var mailOptions = {
          from: '"forge mail" <advisor@forge.org.in>',
-         to: tomail_b +',ambassadors@forge.org.in,mailmodule@alumnustest.forge.org.in',
+         to: tomail_b +',ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
          subject: 'Forge Ambassador Candidate Application success',
          text: 'Thank you for registering , we look forward to working with you',
-         html:  '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>'+toname_b+'<br>'+year_b+'<br>'+dept_b+'<br>'+college_b+'<br>'+company_b+'+<br>'+tomail_b+'</h1>',
+         html:  '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>'+toname_b+'<br>'+year_b+'<br>'+dept_b+'<br>'+college_b+'<br>'+company_b+'<br>'+tomail_b+'</h1>',
 
 
      };
