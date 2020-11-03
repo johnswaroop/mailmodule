@@ -75,6 +75,48 @@ app.post('/', (req, res) => {
 
 })
 
+app.post('/amb', (req, res) => {
+
+    console.log('post request amb');
+
+    console.log(req.body);
+
+    tomail_b=req.body.mail;
+    toname_b=req.body.name;
+    year_b=req.body.year;
+    dept_b=college=req.body.dept;
+    college_b=req.body.college;
+    company_b=req.body.company;
+    
+    
+
+
+    
+
+    
+
+   
+  
+     var mailOptions = {
+         from: '"forge mail" <advisor@forge.org.in>',
+         to: tomail_b +',ambassadors@forge.org.in,mailmodule@alumnustest.forge.org.in',
+         subject: 'Forge Ambassador Candidate Application success',
+         text: 'Thank you for registering , we look forward to working with you',
+         html:  '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>'+toname_b+'<br>'+year_b+'<br>'+dept_b+'<br>'+college_b+'<br>'+company_b+'+<br>'+tomail_b+'</h1>',
+
+
+     };
+    
+
+     transport.sendMail(mailOptions, (error, info) => {
+        if (error) {
+             return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+     });
+
+})
+
 app.listen(8080, () => {
     console.log('server running');
 });
