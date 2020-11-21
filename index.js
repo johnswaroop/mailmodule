@@ -117,21 +117,27 @@ app.post('/amb', (req, res) => {
     college_b = req.body.college;
     company_b = req.body.company;
 
+    var draft_amb;
 
+    ejs.renderFile(__dirname + "/draft_amb.ejs", {
+        name: toname_b
+    }, function (err, data) {
+        if (err) {
+            console.log(err);
+        } else {
 
-
-
-
-
-
+            draft_amb = data;
+            console.log(draft_amb);
+        }
+    });
 
 
     var mailOptions = {
         from: '"forge mail" <advisor@forge.org.in>',
         to: tomail_b + ',ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
-        subject: 'Forge Ambassador Candidate Application success',
+        subject: 'We are pleased to welcome you as a new member of the Forge Ambassadors',
         text: 'Thank you for registering , we look forward to working with you',
-        html: '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>' + toname_b + '<br>' + year_b + '<br>' + dept_b + '<br>' + college_b + '<br>' + company_b + '<br>' + tomail_b + '</h1>',
+        html: draft_amb,
 
 
     };
@@ -143,7 +149,7 @@ app.post('/amb', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
     });
-
+  
 })
 
 app.listen(8080, () => {
