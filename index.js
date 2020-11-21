@@ -104,6 +104,8 @@ app.post('/', (req, res) => {
 
 })
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 app.post('/amb', (req, res) => {
 
     console.log('post request amb');
@@ -119,6 +121,7 @@ app.post('/amb', (req, res) => {
 
     var draft_amb;
 
+    ////////////////html mail render
     ejs.renderFile(__dirname + "/draft_amb.ejs", {
         name: toname_b
     }, function (err, data) {
@@ -131,7 +134,7 @@ app.post('/amb', (req, res) => {
         }
     });
 
-
+     //// to client
     var mailOptions = {
         from: '"forge mail" <advisor@forge.org.in>',
         to: tomail_b + ',ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
@@ -141,9 +144,29 @@ app.post('/amb', (req, res) => {
 
 
     };
+    
+    ///// confirmation mail to godady
+    var mailOptions_invite_amb = {
+        from: '"forge mail" <advisor@forge.org.in>',
+        to:'ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
+        subject: 'Forge Ambassador Candidate Application success',
+        text: 'Thank you for registering , we look forward to working with you',
+        html: '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>' + toname_b + '<br>' + year_b + '<br>' + dept_b + '<br>' + college_b + '<br>' + company_b + '<br>' + tomail_b + '</h1>',
+
+
+    };
 
 
     transport.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+    });
+      
+
+    /// local
+    transport.sendMail(mailOptions_invite_amb, (error, info) => {
         if (error) {
             return console.log(error);
         }
