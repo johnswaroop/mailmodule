@@ -79,7 +79,7 @@ app.post('/', (req, res) => {
     };
 
     var mailOptions_invite = {
-        from: '"forge mail" <advisors@forgealumnus.com>',
+        from: '"forge Alumnus" <advisors@forgealumnus.com>',
         to: tomail,
         subject: 'Forge Alumnus welcomes you to be part of Advisory Board',
         text: 'Thank you for registering , we look forward to working with you',
