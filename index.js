@@ -1,4 +1,4 @@
-const express = require("express");
+nnconst express = require("express");
 const bodyParser = require('body-parser');
 var cors = require('cors')
 var nodemailer = require('nodemailer');
@@ -11,12 +11,13 @@ app.use(cors());
 
 
 var transport = nodemailer.createTransport({
-    service: "gmail",
-    secure: false, //true
-    port: 587,
+    // service: "gmail",
+    // secure: false, //true
+    // port: 587,
+    service: 'SendGrid',
     auth: {
-        user: 'forge.edu.mail@gmail.com',
-        pass: 'Unlockurself20.'
+        user: 'apikey',
+        pass: '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'
     }
 
 });
