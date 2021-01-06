@@ -69,7 +69,7 @@ app.post('/', (req, res) => {
 
 
     var mailOptions = {
-        from: '"forge mail" <advisors@forge.org.in>',
+        from: '"forge mail" <advisors@forgealumnus.com>',
         to: 'advisors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
         subject: 'Forge Alumnus welcomes you to be part of Advisory Board',
         text: 'Thank you for registering , we look forward to working with you',
@@ -89,12 +89,12 @@ app.post('/', (req, res) => {
     };
 
 
-    transport.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-    });
+    // transport.sendMail(mailOptions, (error, info) => {
+    //     if (error) {
+    //         return console.log(error);
+    //     }
+    //     console.log('Message sent: %s', info.messageId);
+    // });
 
     transport.sendMail(mailOptions_invite, (error, info) => {
         if (error) {
