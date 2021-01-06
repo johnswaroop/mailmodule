@@ -69,7 +69,7 @@ app.post('/', (req, res) => {
 
 
     var mailOptions = {
-        from: '"forge mail" <advisor@forge.org.in>',
+        from: '"forge mail" <advisors@forge.org.in>',
         to: 'advisors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
         subject: 'Forge Alumnus welcomes you to be part of Advisory Board',
         text: 'Thank you for registering , we look forward to working with you',
