@@ -69,8 +69,8 @@ app.post('/', (req, res) => {
 
 
     var mailOptions = {
-        from: '"forge mail" <advisors@forgealumnus.com>',
-        to: 'advisors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
+        from: '"FORGE ALUMNUS" <advisors@forgealumnus.com>',
+        to: 'mailmodule@alumnustest.forge.org.in',
         subject: 'Forge Alumnus welcomes you to be part of Advisory Board',
         text: 'Thank you for registering , we look forward to working with you',
         html: '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>' + toname + '<br>' + title + '<br>' + company + '<br>' + tomail + '</h1>',
@@ -89,12 +89,12 @@ app.post('/', (req, res) => {
     };
 
 
-    // transport.sendMail(mailOptions, (error, info) => {
-    //     if (error) {
-    //         return console.log(error);
-    //     }
-    //     console.log('Message sent: %s', info.messageId);
-    // });
+    transport.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+    });
 
     transport.sendMail(mailOptions_invite, (error, info) => {
         if (error) {
@@ -135,9 +135,9 @@ app.post('/amb', (req, res) => {
         }
     });
 
-     //// to client
+    //// to client
     var mailOptions = {
-        from: '"forge mail" <advisor@forge.org.in>',
+        from: '"FORGE ALUMNUS" <ambassadors@forgealumnus.com>',
         to: tomail_b + ',ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
         subject: 'We are pleased to welcome you as a new member of the Forge Ambassadors',
         text: 'Thank you for registering , we look forward to working with you',
@@ -145,11 +145,11 @@ app.post('/amb', (req, res) => {
 
 
     };
-    
+
     ///// confirmation mail to godady
     var mailOptions_invite_amb = {
-        from: '"forge mail" <advisor@forge.org.in>',
-        to:'ambassadors@forgealumnus.com,mailmodule@alumnustest.forge.org.in',
+        from: '"FORGE ALUMNUS" <ambassadors@forgealumnus.com>',
+        to: 'mailmodule@alumnustest.forge.org.in',
         subject: 'Forge Ambassador Candidate Application success',
         text: 'Thank you for registering , we look forward to working with you',
         html: '<h1>Thank you for registering,<br>Your Application has been submitted.<br>Our team will contact you soon and we look forward to working with you.</h1><br><h1>' + toname_b + '<br>' + year_b + '<br>' + dept_b + '<br>' + college_b + '<br>' + company_b + '<br>' + tomail_b + '</h1>',
@@ -164,7 +164,7 @@ app.post('/amb', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
     });
-      
+
 
     /// local
     transport.sendMail(mailOptions_invite_amb, (error, info) => {
@@ -173,7 +173,7 @@ app.post('/amb', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
     });
-  
+
 })
 
 app.listen(8080, () => {
